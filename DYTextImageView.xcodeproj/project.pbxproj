@@ -18,26 +18,12 @@
 		98F2F9C416FBF69800F7B872 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F2F9C316FBF69800F7B872 /* Default-568h@2x.png */; };
 		98F2F9C716FBF69800F7B872 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9C616FBF69800F7B872 /* ViewController.m */; };
 		98F2F9CA16FBF69800F7B872 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98F2F9C816FBF69800F7B872 /* ViewController.xib */; };
-		98F2F9D216FBF69800F7B872 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F2F9D116FBF69800F7B872 /* SenTestingKit.framework */; };
-		98F2F9D316FBF69900F7B872 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F2F9AD16FBF69800F7B872 /* UIKit.framework */; };
-		98F2F9D416FBF69900F7B872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F2F9AF16FBF69800F7B872 /* Foundation.framework */; };
-		98F2F9DC16FBF69900F7B872 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98F2F9DA16FBF69900F7B872 /* InfoPlist.strings */; };
-		98F2F9DF16FBF69900F7B872 /* DYTextImageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9DE16FBF69900F7B872 /* DYTextImageViewTests.m */; };
-		98F2F9ED16FBF6CC00F7B872 /* DYinternalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9EA16FBF6CC00F7B872 /* DYinternalTextView.m */; };
-		98F2F9EE16FBF6CC00F7B872 /* DYinternalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9EA16FBF6CC00F7B872 /* DYinternalTextView.m */; };
 		98F2F9EF16FBF6CC00F7B872 /* DYTextImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9EC16FBF6CC00F7B872 /* DYTextImageView.m */; };
-		98F2F9F016FBF6CC00F7B872 /* DYTextImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9EC16FBF6CC00F7B872 /* DYTextImageView.m */; };
+		98F2F9F316FBFC3100F7B872 /* DYinternalImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F2F9F216FBFC3100F7B872 /* DYinternalImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		98FDACCC16FD6D390094850E /* DYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FDACCB16FD6D390094850E /* DYLabel.m */; };
+		98FDACCE16FD700A0094850E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FDACCD16FD70090094850E /* CoreText.framework */; };
+		98FDACEF16FDE8590094850E /* UILabel+fix.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FDACEE16FDE8590094850E /* UILabel+fix.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		98F2F9D516FBF69900F7B872 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98F2F9A216FBF69800F7B872 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98F2F9A916FBF69800F7B872;
-			remoteInfo = DYTextImageView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		98F2F9AA16FBF69800F7B872 /* DYTextImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYTextImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,16 +42,15 @@
 		98F2F9C516FBF69800F7B872 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		98F2F9C616FBF69800F7B872 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98F2F9C916FBF69800F7B872 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		98F2F9D016FBF69800F7B872 /* DYTextImageViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYTextImageViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		98F2F9D116FBF69800F7B872 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		98F2F9D916FBF69900F7B872 /* DYTextImageViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DYTextImageViewTests-Info.plist"; sourceTree = "<group>"; };
-		98F2F9DB16FBF69900F7B872 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		98F2F9DD16FBF69900F7B872 /* DYTextImageViewTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYTextImageViewTests.h; sourceTree = "<group>"; };
-		98F2F9DE16FBF69900F7B872 /* DYTextImageViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYTextImageViewTests.m; sourceTree = "<group>"; };
-		98F2F9E916FBF6CC00F7B872 /* DYinternalTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYinternalTextView.h; sourceTree = "<group>"; };
-		98F2F9EA16FBF6CC00F7B872 /* DYinternalTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYinternalTextView.m; sourceTree = "<group>"; };
 		98F2F9EB16FBF6CC00F7B872 /* DYTextImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTextImageView.h; sourceTree = "<group>"; };
 		98F2F9EC16FBF6CC00F7B872 /* DYTextImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTextImageView.m; sourceTree = "<group>"; };
+		98F2F9F116FBFC3100F7B872 /* DYinternalImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYinternalImageView.h; sourceTree = "<group>"; };
+		98F2F9F216FBFC3100F7B872 /* DYinternalImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYinternalImageView.m; sourceTree = "<group>"; };
+		98FDACCA16FD6D390094850E /* DYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLabel.h; sourceTree = "<group>"; };
+		98FDACCB16FD6D390094850E /* DYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLabel.m; sourceTree = "<group>"; };
+		98FDACCD16FD70090094850E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		98FDACED16FDE8590094850E /* UILabel+fix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+fix.h"; sourceTree = "<group>"; };
+		98FDACEE16FDE8590094850E /* UILabel+fix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+fix.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,19 +58,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FDACCE16FD700A0094850E /* CoreText.framework in Frameworks */,
 				98F2F9AE16FBF69800F7B872 /* UIKit.framework in Frameworks */,
 				98F2F9B016FBF69800F7B872 /* Foundation.framework in Frameworks */,
 				98F2F9B216FBF69800F7B872 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98F2F9CC16FBF69800F7B872 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98F2F9D216FBF69800F7B872 /* SenTestingKit.framework in Frameworks */,
-				98F2F9D316FBF69900F7B872 /* UIKit.framework in Frameworks */,
-				98F2F9D416FBF69900F7B872 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				98F2F9B316FBF69800F7B872 /* DYTextImageView */,
-				98F2F9D716FBF69900F7B872 /* DYTextImageViewTests */,
 				98F2F9AC16FBF69800F7B872 /* Frameworks */,
 				98F2F9AB16FBF69800F7B872 /* Products */,
 			);
@@ -106,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				98F2F9AA16FBF69800F7B872 /* DYTextImageView.app */,
-				98F2F9D016FBF69800F7B872 /* DYTextImageViewTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,10 +88,10 @@
 		98F2F9AC16FBF69800F7B872 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98FDACCD16FD70090094850E /* CoreText.framework */,
 				98F2F9AD16FBF69800F7B872 /* UIKit.framework */,
 				98F2F9AF16FBF69800F7B872 /* Foundation.framework */,
 				98F2F9B116FBF69800F7B872 /* CoreGraphics.framework */,
-				98F2F9D116FBF69800F7B872 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,32 +124,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		98F2F9D716FBF69900F7B872 /* DYTextImageViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				98F2F9DD16FBF69900F7B872 /* DYTextImageViewTests.h */,
-				98F2F9DE16FBF69900F7B872 /* DYTextImageViewTests.m */,
-				98F2F9D816FBF69900F7B872 /* Supporting Files */,
-			);
-			path = DYTextImageViewTests;
-			sourceTree = "<group>";
-		};
-		98F2F9D816FBF69900F7B872 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				98F2F9D916FBF69900F7B872 /* DYTextImageViewTests-Info.plist */,
-				98F2F9DA16FBF69900F7B872 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		98F2F9E816FBF6B100F7B872 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				98F2F9E916FBF6CC00F7B872 /* DYinternalTextView.h */,
-				98F2F9EA16FBF6CC00F7B872 /* DYinternalTextView.m */,
+				98F2F9F116FBFC3100F7B872 /* DYinternalImageView.h */,
+				98F2F9F216FBFC3100F7B872 /* DYinternalImageView.m */,
+				98FDACCA16FD6D390094850E /* DYLabel.h */,
+				98FDACCB16FD6D390094850E /* DYLabel.m */,
 				98F2F9EB16FBF6CC00F7B872 /* DYTextImageView.h */,
 				98F2F9EC16FBF6CC00F7B872 /* DYTextImageView.m */,
+				98FDACED16FDE8590094850E /* UILabel+fix.h */,
+				98FDACEE16FDE8590094850E /* UILabel+fix.m */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -200,25 +159,6 @@
 			productReference = 98F2F9AA16FBF69800F7B872 /* DYTextImageView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		98F2F9CF16FBF69800F7B872 /* DYTextImageViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 98F2F9E516FBF69900F7B872 /* Build configuration list for PBXNativeTarget "DYTextImageViewTests" */;
-			buildPhases = (
-				98F2F9CB16FBF69800F7B872 /* Sources */,
-				98F2F9CC16FBF69800F7B872 /* Frameworks */,
-				98F2F9CD16FBF69800F7B872 /* Resources */,
-				98F2F9CE16FBF69800F7B872 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				98F2F9D616FBF69900F7B872 /* PBXTargetDependency */,
-			);
-			name = DYTextImageViewTests;
-			productName = DYTextImageViewTests;
-			productReference = 98F2F9D016FBF69800F7B872 /* DYTextImageViewTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,7 +181,6 @@
 			projectRoot = "";
 			targets = (
 				98F2F9A916FBF69800F7B872 /* DYTextImageView */,
-				98F2F9CF16FBF69800F7B872 /* DYTextImageViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,31 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98F2F9CD16FBF69800F7B872 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98F2F9DC16FBF69900F7B872 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		98F2F9CE16FBF69800F7B872 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		98F2F9A616FBF69800F7B872 /* Sources */ = {
@@ -293,30 +208,14 @@
 				98F2F9BA16FBF69800F7B872 /* main.m in Sources */,
 				98F2F9BE16FBF69800F7B872 /* AppDelegate.m in Sources */,
 				98F2F9C716FBF69800F7B872 /* ViewController.m in Sources */,
-				98F2F9ED16FBF6CC00F7B872 /* DYinternalTextView.m in Sources */,
 				98F2F9EF16FBF6CC00F7B872 /* DYTextImageView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98F2F9CB16FBF69800F7B872 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98F2F9DF16FBF69900F7B872 /* DYTextImageViewTests.m in Sources */,
-				98F2F9EE16FBF6CC00F7B872 /* DYinternalTextView.m in Sources */,
-				98F2F9F016FBF6CC00F7B872 /* DYTextImageView.m in Sources */,
+				98F2F9F316FBFC3100F7B872 /* DYinternalImageView.m in Sources */,
+				98FDACCC16FD6D390094850E /* DYLabel.m in Sources */,
+				98FDACEF16FDE8590094850E /* UILabel+fix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		98F2F9D616FBF69900F7B872 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 98F2F9A916FBF69800F7B872 /* DYTextImageView */;
-			targetProxy = 98F2F9D516FBF69900F7B872 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		98F2F9B616FBF69800F7B872 /* InfoPlist.strings */ = {
@@ -333,14 +232,6 @@
 				98F2F9C916FBF69800F7B872 /* en */,
 			);
 			name = ViewController.xib;
-			sourceTree = "<group>";
-		};
-		98F2F9DA16FBF69900F7B872 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98F2F9DB16FBF69900F7B872 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -426,40 +317,6 @@
 			};
 			name = Release;
 		};
-		98F2F9E616FBF69900F7B872 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DYTextImageView.app/DYTextImageView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DYTextImageView/DYTextImageView-Prefix.pch";
-				INFOPLIST_FILE = "DYTextImageViewTests/DYTextImageViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		98F2F9E716FBF69900F7B872 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DYTextImageView.app/DYTextImageView";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DYTextImageView/DYTextImageView-Prefix.pch";
-				INFOPLIST_FILE = "DYTextImageViewTests/DYTextImageViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,14 +336,7 @@
 				98F2F9E416FBF69900F7B872 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		98F2F9E516FBF69900F7B872 /* Build configuration list for PBXNativeTarget "DYTextImageViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				98F2F9E616FBF69900F7B872 /* Debug */,
-				98F2F9E716FBF69900F7B872 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

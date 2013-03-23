@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DYTextImageView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <DYTextImageViewDelegate>
 
+@property (nonatomic,strong) DYTextImageView *textImageView;
+@property(nonatomic) NSRange highlightedRange;
 @end
