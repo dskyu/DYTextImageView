@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define MaxNumberOfLines   3
+#define MaxNumberOfLines   5
 
 
 @class DYLabel;
@@ -23,11 +23,9 @@
 @end
 @interface DYLabel : UILabel
 
-
 @property(nonatomic, weak) id <DYLabelDelegate> delegate;
 
-- (NSRange)keyRangeAtPoint:(CGPoint)point;
-
+- (void)autoFitHeight;
 - (id)initWithFrame:(CGRect)frame attributedString:(NSAttributedString *)string;
 
 @end

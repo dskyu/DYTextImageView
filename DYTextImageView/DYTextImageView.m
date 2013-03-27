@@ -9,9 +9,11 @@
 #import "DYTextImageView.h"
 #import <CoreText/CoreText.h>
 
+
 @implementation DYTextImageView
 @synthesize label = _label;
-@synthesize imageViewArray = _imageViewArray;
+//@synthesize imageViewArray = _imageViewArray;
+@synthesize imageView = _imageView;
 @synthesize maxNumberOfLines= _maxNumberOfLines;
 
 - (id)initWithFrame:(CGRect)frame {
@@ -24,7 +26,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-      //  [self commonInitialiser];
+        [self commonInitialiser];
     }
     return self;
 }
@@ -32,22 +34,28 @@
 
 -(void)commonInitialiser
 {
-    CGRect r = self.frame;
-    NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:@"小明说 fjdlsafjdlfjdklsajflkds fdsafdsafdsa fd sa fd saf dsa fd saf sa fsda ajflkdsjafkldjsaklf jdlsk fasfdsafdsafd sfw ef ewq fq ferw gew erqafjasafj a 小江"];
-    [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 2)];
-    [attrString addAttribute:@"href" value:@"to do something" range:NSMakeRange(0, 2)];
-    [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(10, 2)];
-    [attrString addAttribute:@"href" value:@"to do something" range:NSMakeRange(10, 2)];
-    
-    
-    _label = [[DYLabel alloc] initWithFrame:r attributedString:attrString];
+    _label = [[DYLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];
+    [_label setNumberOfLines:0];
+    [_label setFont:[UIFont fontWithName:@"Arial" size:14]];
+    [_label setLineBreakMode:UILineBreakModeTailTruncation];
     _label.delegate = self;
     [self addSubview:_label];
     
-
+    
+    _imageView = [[DYinternalImageView alloc] init];
+    _imageView.hidden = YES;
+    _imageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTouched)];
+    [_imageView addGestureRecognizer:gesture];
+    [self addSubview:_imageView];
 }
 
-
+- (void)imageViewTouched
+{
+    if ([self.delegate conformsToProtocol:@protocol(DYTextImageViewDelegate)] && [self.delegate respondsToSelector:@selector(textImageView:imageDidTouchedInside:)]) {
+        [self.delegate textImageView:self imageDidTouchedInside:self.imageView];
+    }
+}
 
 
 #pragma mark -
@@ -55,19 +63,30 @@
 
 - (void)label:(DYLabel*)label didBeginTouch:(UITouch*)touch onKeyInRange:(NSRange)range
 {
-    [self.delegate textImageView:self textDidBeginTouch:touch onKeyInRange:range];
+    if ([self.delegate conformsToProtocol:@protocol(DYTextImageViewDelegate)] && [self.delegate respondsToSelector:@selector(textImageView:textDidBeginTouch:onKeyInRange:)]) {
+        [self.delegate textImageView:self textDidBeginTouch:touch onKeyInRange:range];
+    }
 }
 - (void)label:(DYLabel*)label didMoveTouch:(UITouch*)touch onKeyInRange:(NSRange)range
 {
-    [self.delegate textImageView:self textDidMoveTouch:touch onKeyInRange:range];
+    if ([self.delegate conformsToProtocol:@protocol(DYTextImageViewDelegate)] && [self.delegate respondsToSelector:@selector(textImageView:textDidMoveTouch:onKeyInRange:)]) {
+        [self.delegate textImageView:self textDidMoveTouch:touch onKeyInRange:range];
+    }
+    
 }
 - (void)label:(DYLabel*)label didEndTouch:(UITouch*)touch onKeyInRange:(NSRange)range
 {
-    [self.delegate textImageView:self textDidEndTouch:touch onKeyInRange:range];
+    if ([self.delegate conformsToProtocol:@protocol(DYTextImageViewDelegate)] && [self.delegate respondsToSelector:@selector(textImageView:textDidEndTouch:onKeyInRange:)]) {
+        [self.delegate textImageView:self textDidEndTouch:touch onKeyInRange:range];
+    }
+    
 }
 - (void)label:(DYLabel*)label didCancelTouch:(UITouch*)touch
 {
-    [self.delegate textImageView:self textDidCancelTouch:touch];
+    if ([self.delegate conformsToProtocol:@protocol(DYTextImageViewDelegate)] && [self.delegate respondsToSelector:@selector(textImageView:textDidCancelTouch:)]) {
+        [self.delegate textImageView:self textDidCancelTouch:touch];
+    }
+    
 }
 
 

@@ -41,15 +41,15 @@
 - (void)commonInitialiser
 {
     self.userInteractionEnabled = YES;
-    self.numberOfLines = MaxNumberOfLines;
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)autoFitHeight
 {
-    CGRect textRect = [self textRectForBounds:self.bounds limitedToNumberOfLines:self.numberOfLines];
-    CGRect frame = self.frame;
-    frame.size.height = textRect.size.height;
-    [self setFrame:frame];
+    CGSize size = CGSizeMake(300,[self.font lineHeight]*MaxNumberOfLines);
+    CGSize labelsize = [self.text sizeWithFont:self.font constrainedToSize:size
+                         lineBreakMode:UILineBreakModeTailTruncation];
+    [self setFrame:CGRectMake(0,0, labelsize.width, labelsize.height)];
 }
 
 - (void)setText:(NSString *)text
@@ -68,7 +68,7 @@
 - (NSRange )keyRangeAtPoint:(CGPoint)point {
     
     NSMutableAttributedString* attrText = [self.attributedText mutableCopy];
-    NSRange ZeroRange = NSMakeRange(0, 0);
+    NSRange ZeroRange = NSMakeRange(NSNotFound, 0);
 
     if (!CGRectContainsPoint(self.bounds, point)) {
         return ZeroRange;
@@ -108,8 +108,6 @@
         }
         range = ZeroRange;
     }
-    NSLog(@"%d %d",range.location,range.length);
-    
     return range;
    
 }
@@ -139,8 +137,9 @@
     UITouch *touch = [touches anyObject];
     NSRange range = [self keyRangeAtPoint:[touch locationInView:self]];
     
-    [self.delegate label:self didBeginTouch:touch onKeyInRange:range];
-    
+    if ([self.delegate conformsToProtocol:@protocol(DYLabelDelegate)] && [self.delegate respondsToSelector:@selector(label:didBeginTouch:onKeyInRange:)]) {
+        [self.delegate label:self didBeginTouch:touch onKeyInRange:range];
+    }
     [super touchesBegan:touches withEvent:event];
 }
 
@@ -148,9 +147,9 @@
     
     UITouch *touch = [touches anyObject];
     NSRange range = [self keyRangeAtPoint:[touch locationInView:self]];
-    
-    [self.delegate label:self didMoveTouch:touch onKeyInRange:range];
-    
+    if ([self.delegate conformsToProtocol:@protocol(DYLabelDelegate)] && [self.delegate respondsToSelector:@selector(label:didMoveTouch:onKeyInRange:)]) {
+        [self.delegate label:self didMoveTouch:touch onKeyInRange:range];
+    }
     [super touchesMoved:touches withEvent:event];
 }
 
@@ -158,18 +157,19 @@
     
     UITouch *touch = [touches anyObject];
     NSRange range = [self keyRangeAtPoint:[touch locationInView:self]];
-    
-    [self.delegate label:self didEndTouch:touch onKeyInRange:range];
-    
+    if ([self.delegate conformsToProtocol:@protocol(DYLabelDelegate)] && [self.delegate respondsToSelector:@selector(label:didEndTouch:onKeyInRange:)]) {
+        [self.delegate label:self didEndTouch:touch onKeyInRange:range];
+    }
     [super touchesEnded:touches withEvent:event];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];
-    
-    [self.delegate label:self didCancelTouch:touch];
-    
+    if ([self.delegate conformsToProtocol:@protocol(DYLabelDelegate)] && [self.delegate respondsToSelector:@selector(label:didCancelTouch:)]) {
+        [self.delegate label:self didCancelTouch:touch];
+    }
+
     [super touchesCancelled:touches withEvent:event];
 }
 

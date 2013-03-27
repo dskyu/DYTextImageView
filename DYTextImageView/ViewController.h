@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullingRefreshTableView.h"
 #import "DYTextImageView.h"
+#import "YBLHttpResponseDelegate.h"
+#import "ASIHTTPRequest.h"
 
-@interface ViewController : UIViewController <DYTextImageViewDelegate>
-
-@property (nonatomic,strong) DYTextImageView *textImageView;
-@property(nonatomic) NSRange highlightedRange;
+@interface ViewController : UIViewController <DYTextImageViewDelegate,PullingRefreshTableViewDelegate,YBLHttpResponseDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    long _lastItemTime;
+}
+@property BOOL refreshing;
+@property (nonatomic) NSRange highlightedRange;
+@property (strong,nonatomic) NSMutableArray *dataArray;
+@property (strong,nonatomic) PullingRefreshTableView *tableView;
 @end
