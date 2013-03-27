@@ -42,8 +42,15 @@ static CGRect _cellImageFrame;
         
         UIGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         [self addGestureRecognizer:longPress];
-        
         [self addSubview:_imageView];
+       
+        
+        _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        [self addSubview:_activityView];
+        [_activityView setBackgroundColor:[UIColor blackColor]];
+        [_activityView setFrame:CGRectMake(160, 240, 20, 20)];
+        
+        
         
         _cellImageFrame = cellImageFrame;
         _imageView.frame = cellImageFrame;
@@ -59,6 +66,7 @@ static CGRect _cellImageFrame;
                 _singleTap.enabled = YES;
                 
                 if (url) {
+                    [_activityView startAnimating];
                     [self scaleToOriginFull:image url:url frame:frame];
                 }else{
                     CGFloat width = image.size.width;
@@ -81,6 +89,7 @@ static CGRect _cellImageFrame;
                 _singleTap.enabled = YES;
                 
                 if (url) {
+                    [_activityView startAnimating];
                     [self scaleToOriginFull:image url:url frame:frame];
                 }else{
                     CGFloat width = image.size.width;
@@ -119,6 +128,7 @@ static CGRect _cellImageFrame;
         }else{
             NSLog(@"isn't cached");
         }
+        [blockSelf->_activityView stopAnimating];
         
         float minimumScale = blockSelf.frame.size.width  / image.size.width;
         if (minimumScale<1) {

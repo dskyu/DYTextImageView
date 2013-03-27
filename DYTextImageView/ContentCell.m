@@ -76,11 +76,15 @@
             CGRect imageViewRect = blockSelf.textImageView.imageView.frame;
             CGFloat imageHeight = image.size.height;
             CGFloat imageWidth = image.size.width;
+            CGFloat rate = imageHeight/imageWidth;
             
-            if (imageHeight/imageWidth > 1) {
-                imageViewRect.size.width = 100*imageWidth/imageHeight;
+            if (rate > 1) {
+                imageViewRect.size.width = 100/rate;
             }else{
-                imageViewRect.size.height = 100*imageHeight/imageWidth;
+                imageViewRect.size.width = 100/rate;
+                if (imageViewRect.size.width > 300) {
+                    imageViewRect.size.width = 300;
+                }
             }
             blockSelf.textImageView.imageView.frame = imageViewRect;
             

@@ -16,6 +16,7 @@
 @interface FullScreenImageView : UIScrollView<UIScrollViewDelegate>
 {
     UITapGestureRecognizer *_singleTap;
+    UIActivityIndicatorView *_activityView;
     BOOL scaleFinish;
 }
 
