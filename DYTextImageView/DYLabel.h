@@ -10,7 +10,6 @@
 
 #define MaxNumberOfLines   5
 
-
 @class DYLabel;
 
 @protocol DYLabelDelegate <NSObject>

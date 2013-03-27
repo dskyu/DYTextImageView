@@ -27,7 +27,6 @@
     _lastItemTime = 0;
     
     CGRect bounds = self.view.bounds;
-    bounds.size.height -= 44.f*2;
     self.tableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
     _tableView.dataSource = self;
     _tableView.delegate = self;

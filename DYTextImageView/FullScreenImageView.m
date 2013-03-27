@@ -48,7 +48,7 @@ static CGRect _cellImageFrame;
         _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         [self addSubview:_activityView];
         [_activityView setBackgroundColor:[UIColor blackColor]];
-        [_activityView setFrame:CGRectMake(160, 240, 20, 20)];
+        [_activityView setFrame:CGRectMake((frame.size.width-20)/2, (frame.size.height-20)/2, 20, 20)];
         
         
         
@@ -143,7 +143,6 @@ static CGRect _cellImageFrame;
                 CGFloat height = image.size.height;
                 
                 blockSelf.imageView.frame = CGRectMake(0, 0, width, height);
-         //       [blockSelf logCGRECT:blockSelf.imageView.frame];
                 [blockSelf setMinimumZoomScale:minimumScale];
                 [blockSelf setZoomScale:minimumScale];
         //        blockSelf.imageView.center = blockSelf.center;
